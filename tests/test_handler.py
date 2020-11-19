@@ -58,12 +58,6 @@ class TestLogsHandler(AsyncHTTPTestCase):
         response = self.fetch('/', method="POST", body=body)
         self.check_success_response(response)
 
-    def test_success_middle(self):
-        offset = self.file_size // 2
-        body = '{ "offset": %d }' % offset
-        response = self.fetch('/', method="POST", body=body)
-        self.check_success_response(response)
-
     def test_success_end(self):
         offset = self.file_size
         body = '{ "offset": %d }' % offset
